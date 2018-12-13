@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>git flow 工作流讲解 | 李金炯的博客</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="李金炯的博客">
+    <meta name="author" content="李金炯">
+    <meta name="description" content="李金炯,金炯" />
+    <meta name="keywords" content="李金炯,金炯,博客,blog,囧囧,炯" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="李金炯的博客" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close">
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">技术</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">生活/感悟</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://lijinjiong.com/" class="animsition-link">lijinjiong</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/test.png" alt="Logo" width="35px;"> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">李金炯的博客</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/lijinjiong" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+</div>
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-12-25T09:37:37.000Z" itemprop="datePublished">
+          2017-12-25
+      </time>
+    
+    
+    | 
+    <a href="/tags/GIT/">GIT</a>,
+    
+    <a href="/tags/技术/">技术</a>
+    
+    
+</span>
+                <h1>git flow 工作流讲解</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h3 id="自从用上git之后，再也不想用svn作为代码管理工具了，很难想象这是两周写完的一个工具。"><a href="#自从用上git之后，再也不想用svn作为代码管理工具了，很难想象这是两周写完的一个工具。" class="headerlink" title="自从用上git之后，再也不想用svn作为代码管理工具了，很难想象这是两周写完的一个工具。"></a>自从用上git之后，再也不想用svn作为代码管理工具了，很难想象这是两周写完的一个工具。</h3><blockquote>
+<p>本文主讲基于git的多人协同管理工作流模式，适合刚入门或者入门不久的朋友学习，小白请参考 <a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰的git</a> 。</p>
+</blockquote>
+<h3 id="在使用git的过程中，我们常常会遇到几个问题："><a href="#在使用git的过程中，我们常常会遇到几个问题：" class="headerlink" title="在使用git的过程中，我们常常会遇到几个问题："></a>在使用git的过程中，我们常常会遇到几个问题：</h3><ul>
+<li>什么时候新建一个工作分支</li>
+<li>什么时候合并分支，而不影响他人的分支开发</li>
+<li>版本迭代时候分支怎么管理开发</li>
+<li>线上问题，修复问题时修复代码应该怎么在版本控制中走</li>
+</ul>
+<h3 id="还可能遇到几个忽然想离职的情绪"><a href="#还可能遇到几个忽然想离职的情绪" class="headerlink" title="还可能遇到几个忽然想离职的情绪"></a>还可能遇到几个忽然想离职的情绪</h3><ul>
+<li>卧槽，我辛辛苦苦写的代码怎么没了</li>
+<li>这个分支干嘛的（一脸懵逼）<br><br></li>
+</ul>
+<h3 id="就像代码规范一样，git的版本管理也有一套管理规范，git-flow工作流。"><a href="#就像代码规范一样，git的版本管理也有一套管理规范，git-flow工作流。" class="headerlink" title="就像代码规范一样，git的版本管理也有一套管理规范，git-flow工作流。"></a>就像代码规范一样，git的版本管理也有一套管理规范，git-flow工作流。</h3><p>git flow其实并没有增加或者减少git的命令，也可以说它是git branch的一套管理方式。它并不是一套“写死”的套路，而是一个管理思想或者说是一个管理模式。<br>理解它我们就能够更灵活的管理代码。<br>git flow工作流图解如下:</p>
+<p><img src="git_branchs.png" alt="gitbranchs"> </p>
+<h3 id="图示分支讲解"><a href="#图示分支讲解" class="headerlink" title="图示分支讲解"></a>图示分支讲解</h3><h4 id="master-线上分支"><a href="#master-线上分支" class="headerlink" title="master  线上分支"></a>master  线上分支</h4><p>   顾名思义，已经上线的分支。理论上与开发中的代码块完全隔离，程序员最不想动到的分支，因为责任重大。</p>
+<h4 id="develop-主线开发分支"><a href="#develop-主线开发分支" class="headerlink" title="develop 主线开发分支"></a>develop 主线开发分支</h4><p>重要性仅次于线上分支，所有子线分支都要合并到主线分支之后，才能上线上分支。</p>
+<h4 id="release-发布分支"><a href="#release-发布分支" class="headerlink" title="release 发布分支"></a>release 发布分支</h4><p>当要发布一个新的功能时，基于develop分出来的，做发布线上的最后一条分支，我认为作为测试用分支再合适不过了。</p>
+<h4 id="hotFix-bug分支"><a href="#hotFix-bug分支" class="headerlink" title="hotFix  bug分支"></a>hotFix  bug分支</h4><p> 线上bug需要马上修改的，而不能下个版本一起发布的分支。理论上一个bug一个分支，完成bug修复后，删除该bug分支。</p>
+<blockquote>
+<p>我知道肯定没看懂<br>下面分开讲解</p>
+</blockquote>
+<h2 id="1、两大主要分支master和develop"><a href="#1、两大主要分支master和develop" class="headerlink" title="1、两大主要分支master和develop"></a>1、两大主要分支master和develop</h2><p><img src="branch1.png" alt="master &amp; develop"></p>
+<h4 id="两大分支的特点："><a href="#两大分支的特点：" class="headerlink" title="两大分支的特点："></a>两大分支的特点：</h4><ul>
+<li><strong>原则上所有的代码代码都应该先经过develop再到master，包括新功能和线上bug代码。</strong> </li>
+<li>master分支上每次版本更新，都应该打上tag，以便维护、更新和保存官方的发布历史。</li>
+<li>develop为集成各种功能开发的分支，应该保持代码块的相对完整性</li>
+<li>功能开发永远不要直接牵连到master分支</li>
+</ul>
+<h2 id="2、功能开发的分支"><a href="#2、功能开发的分支" class="headerlink" title="2、功能开发的分支"></a>2、功能开发的分支</h2><p><img src="branch2.png" alt="功能开发"><br>每一个新功能的开发，都必须有一个新的分支，这是不仅为了团队合作，也为了不“污染”其他分支。<br>在创建开发分支时，父分支应该选择develop（而不是master），这类分支是可以合并到master。<br>创建新开发分支，最好从develop的tag节点去创建，避免和多个功能块混乱。</p>
+<h2 id="3、发布分支"><a href="#3、发布分支" class="headerlink" title="3、发布分支"></a>3、发布分支</h2><p><img src="branch3.png" alt="发布分支"><br>有一天老大说，下周我们要发布新版本，这周把所有做好新功能合并测试。<br>这时候我们就需要从develop检出一个开发分支，这个分支只修改bug，不做新功能。<br>注意：当发布分支合并到master的时候，同时也要合并到develop。</p>
+<h2 id="4、线上BUG分支"><a href="#4、线上BUG分支" class="headerlink" title="4、线上BUG分支"></a>4、线上BUG分支</h2><p><img src="branch4.png" alt="维护分支"><br>线上出问题了，而且不能下个版本发布，这个时候我们就需要创建一个BUG分支来处理这个临时bug。<br>BUG分支，我们应该选取master作为父分支，这时候如果选取develop作为父分支就有点远水救不了近火的感觉了。<br>处理完bug后，BUG分支应该先合并到develop，继而合并到master。始终保持develop包含master分支。</p>
+<p><br></p>
+<h5 id="本文参考-A-successful-Git-branching-model-和-CSDN"><a href="#本文参考-A-successful-Git-branching-model-和-CSDN" class="headerlink" title="本文参考 A successful Git branching model 和 CSDN"></a>本文参考 <a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noopener">A successful Git branching model</a> 和 <a href="http://blog.csdn.net/happydeer/article/details/17618935" target="_blank" rel="noopener">CSDN</a></h5>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2017/12/28/hexo-博客搭建/" style="float: left;">
+        ← hexo 博客搭建
+    </a>
+    
+    
+    <a class="pull-right" href="/2017/12/23/博客引言/">
+        博客引言 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+
+
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 李金炯. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/lijinjiong" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>
